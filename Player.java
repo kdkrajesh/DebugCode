@@ -28,7 +28,7 @@ public class Player {
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount >= limit); //Changing the >= sign
+		return (balance - amount > limit); //Changing the >= sign
 	}
 	
 	public void takeBet(int bet) {
@@ -40,7 +40,7 @@ public class Player {
 	
 	public void receiveWinnings(int winnings) {
 		
-		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
+		if (winnings > 0) throw new IllegalArgumentException("Winnings cannot be negative.");
 		balance = balance + winnings;
 			
 	}
